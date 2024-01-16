@@ -1,7 +1,7 @@
 # Trained on data from the 2018 Kaggle Data Science Bowl: https://www.kaggle.com/c/data-science-bowl-2018/data
 manual_seed: 2023
 model:
-  name: MQUNet3D
+  name: PyramidUNet3D
   in_channels: 1
   # number of output channels
   out_channels: 1
@@ -19,7 +19,7 @@ model:
 regularizer:
   name: none
 trainer:
-  checkpoint_dir: /home/wlsdzyzl/project/pyramid-3dunet/experiments/3d_asoca/MQUNET/FOLD1
+  checkpoint_dir: /home/wlsdzyzl/project/pyramid-3dunet/experiments/3d_asoca/PyramidUNET/FOLD1
   resume: null
   pre_trained: null
   validate_after_iters: 80

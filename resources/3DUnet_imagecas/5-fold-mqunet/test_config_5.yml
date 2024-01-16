@@ -1,8 +1,8 @@
-model_path: /home/wlsdzyzl/project/pyramid-3dunet/experiments/3d_imagecas/MQUNET/FOLD5/last_checkpoint.pytorch
+model_path: /home/wlsdzyzl/project/pyramid-3dunet/experiments/3d_imagecas/PyramidUNET/FOLD5/last_checkpoint.pytorch
 # model configuration
 model:
   # model class
-  name: MQUNet3D
+  name: PyramidUNet3D
   # number of input channels to the model
   in_channels: 1
   # number of output channels
@@ -38,7 +38,7 @@ loaders:
   # how many subprocesses to use for data loading
   num_workers: 8
   # test loaders configuration
-  output_dir: /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_imagecas/MQUNET
+  output_dir: /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_imagecas/PyramidUNET
   test:
     # paths to the test datasets; if a given path is a directory all NII files
     # inside this this directory will be included as well (non-recursively)

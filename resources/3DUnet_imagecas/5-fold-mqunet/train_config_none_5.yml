@@ -1,6 +1,6 @@
 manual_seed: 2023
 model:
-  name: MQUNet3D
+  name: PyramidUNet3D
   in_channels: 1
   # number of output channels
   out_channels: 1
@@ -18,7 +18,7 @@ model:
 regularizer:
   name: none
 trainer:
-  checkpoint_dir: /home/wlsdzyzl/project/pyramid-3dunet/experiments/3d_imagecas/MQUNET/FOLD5
+  checkpoint_dir: /home/wlsdzyzl/project/pyramid-3dunet/experiments/3d_imagecas/PyramidUNET/FOLD5
   resume: null
   pre_trained: null
   validate_after_iters: 80

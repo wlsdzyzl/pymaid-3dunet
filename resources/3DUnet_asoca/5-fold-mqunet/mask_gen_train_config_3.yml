@@ -1,8 +1,8 @@
-model_path: /home/wlsdzyzl/project/pyramid-3dunet/experiments/3d_asoca/MQUNET/FOLD3/last_checkpoint.pytorch
+model_path: /home/wlsdzyzl/project/pyramid-3dunet/experiments/3d_asoca/PyramidUNET/FOLD3/last_checkpoint.pytorch
 # model configuration
 model:
   # model class
-  name: MQUNet3D
+  name: PyramidUNet3D
   # number of input channels to the model
   in_channels: 1
   # number of output channels

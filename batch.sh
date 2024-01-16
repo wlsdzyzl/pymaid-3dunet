@@ -29,7 +29,7 @@ evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predict
 echo 'resunet':
 evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_asoca/RESUNET -g /media/wlsdzyzl/DATA1/datasets/ASOCA/nii/cropped_middle_zoomed_72_128_128/data/label
 echo 'pyramidunet':
-evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_asoca/MQUNET -g /media/wlsdzyzl/DATA1/datasets/ASOCA/nii/cropped_middle_zoomed_72_128_128/data/label
+evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_asoca/PyramidUNET -g /media/wlsdzyzl/DATA1/datasets/ASOCA/nii/cropped_middle_zoomed_72_128_128/data/label
 echo '---------------------origin------------------'
 # echo 'unet':
 # evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_asoca/UNET -g /media/wlsdzyzl/DATA1/datasets/ASOCA/nii/cropped_middle/data/label
@@ -38,7 +38,7 @@ echo '---------------------origin------------------'
 # echo 'resunet':
 # evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_asoca/RESUNET -g /media/wlsdzyzl/DATA1/datasets/ASOCA/nii/cropped_middle/data/label
 # echo 'pyramidunet':
-# evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_asoca/MQUNET -g /media/wlsdzyzl/DATA1/datasets/ASOCA/nii/cropped_middle/data/label
+# evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_asoca/PyramidUNET -g /media/wlsdzyzl/DATA1/datasets/ASOCA/nii/cropped_middle/data/label
 echo 'unet-patch':
 evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_asoca/UNET-PATCH -g /media/wlsdzyzl/DATA1/datasets/ASOCA/nii/cropped_middle/data/label
 echo 'unet-stage-2':
@@ -54,7 +54,7 @@ evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predict
 echo 'resunet':
 evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_imagecas/RESUNET -g /media/wlsdzyzl/DATA1/datasets/imageCAS/sub_dataset_crop_middle_zoomed/data/label
 echo 'pyramidunet':
-evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_imagecas/MQUNET -g /media/wlsdzyzl/DATA1/datasets/imageCAS/sub_dataset_crop_middle_zoomed/data/label
+evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_imagecas/PyramidUNET -g /media/wlsdzyzl/DATA1/datasets/imageCAS/sub_dataset_crop_middle_zoomed/data/label
 echo '---------------------origin------------------'
 # echo 'unet':
 # evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_imagecas/UNET -g /media/wlsdzyzl/DATA1/datasets/imageCAS/sub_dataset_crop_middle/data/label
@@ -63,7 +63,7 @@ echo '---------------------origin------------------'
 # echo 'resunet':
 # evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_imagecas/RESUNET -g /media/wlsdzyzl/DATA1/datasets/imageCAS/sub_dataset_crop_middle/data/label
 # echo 'pyramidunet':
-# evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_imagecas/MQUNET -g /media/wlsdzyzl/DATA1/datasets/imageCAS/sub_dataset_crop_middle/data/label
+# evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_imagecas/PyramidUNET -g /media/wlsdzyzl/DATA1/datasets/imageCAS/sub_dataset_crop_middle/data/label
 echo 'unet-patch':
 evalpyramidunet -p /home/wlsdzyzl/project/pyramid-3dunet/generated_files/predictions/3d_imagecas/UNET-PATCH -g /media/wlsdzyzl/DATA1/datasets/imageCAS/sub_dataset_crop_middle/data/label
 echo 'unet-stage-2':

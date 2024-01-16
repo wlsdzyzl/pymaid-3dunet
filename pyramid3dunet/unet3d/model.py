@@ -101,7 +101,7 @@ class AbstractUNet(nn.Module):
 
         return x
 # we add a heirarchical loss here
-class AbstractMQUNet(nn.Module):
+class AbstractPyramidUNet(nn.Module):
     """
     Base class for standard and residual UNet.
 
@@ -134,7 +134,7 @@ class AbstractMQUNet(nn.Module):
     def __init__(self, in_channels, out_channels, final_sigmoid, basic_module, f_maps=64, layer_order='gcr',
                  num_groups=8, num_levels=4, is_segmentation=True, conv_kernel_size=3, pool_kernel_size=2,
                  conv_padding=1, is3d=True):
-        super(AbstractMQUNet, self).__init__()
+        super(AbstractPyramidUNet, self).__init__()
 
         if isinstance(f_maps, int):
             f_maps = number_of_features_per_level(f_maps, num_levels=num_levels)
@@ -226,7 +226,7 @@ class UNet3D(AbstractUNet):
                                      conv_padding=conv_padding,
                                      is3d=True)
 
-class MQUNet3D(AbstractMQUNet):
+class PyramidUNet3D(AbstractPyramidUNet):
     """
     3DUnet model from
     `"3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation"
@@ -237,7 +237,7 @@ class MQUNet3D(AbstractMQUNet):
 
     def __init__(self, in_channels, out_channels, final_sigmoid=True, f_maps=64, layer_order='gcr',
                  num_groups=8, num_levels=4, is_segmentation=True, conv_padding=1, **kwargs):
-        super(MQUNet3D, self).__init__(in_channels=in_channels,
+        super(PyramidUNet3D, self).__init__(in_channels=in_channels,
                                      out_channels=out_channels,
                                      final_sigmoid=final_sigmoid,
                                      basic_module=DoubleConv,
@@ -271,7 +271,7 @@ class ResidualUNet3D(AbstractUNet):
                                              conv_padding=conv_padding,
                                              is3d=True)
 
-class ResidualMQUNet3D(AbstractMQUNet):
+class ResidualPyramidUNet3D(AbstractPyramidUNet):
     """
     Residual 3DUnet model implementation based on https://arxiv.org/pdf/1706.00120.pdf.
     Uses ResNetBlock as a basic building block, summation joining instead
@@ -281,7 +281,7 @@ class ResidualMQUNet3D(AbstractMQUNet):
 
     def __init__(self, in_channels, out_channels, final_sigmoid=True, f_maps=64, layer_order='gcr',
                  num_groups=8, num_levels=5, is_segmentation=True, conv_padding=1, **kwargs):
-        super(ResidualMQUNet3D, self).__init__(in_channels=in_channels,
+        super(ResidualPyramidUNet3D, self).__init__(in_channels=in_channels,
                                              out_channels=out_channels,
                                              final_sigmoid=final_sigmoid,
                                              basic_module=ResNetBlock,
@@ -492,11 +492,11 @@ class VNet(nn.Module):
         out = self.out_tr(out)
         return out
 
-class MQVNet(nn.Module):
+class PyramidVNet(nn.Module):
     # the number of convolutions in each layer corresponds
     # to what is in the actual prototxt, not the intent
     def __init__(self, elu=True, nll=False, final_sigmoid = True, is_segmentation=True,  **kwargs):
-        super(MQVNet, self).__init__()
+        super(PyramidVNet, self).__init__()
         self.in_tr = InputTransition(elu)
         self.down_tr32 = DownTransition(16, 1, elu)
         self.down_tr64 = DownTransition(32, 2, elu)
