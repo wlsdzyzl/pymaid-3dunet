@@ -1,0 +1,43 @@
+package:
+  name: pytorch-3dunet
+  version: {{ RELEASE_VERSION }}
+
+source:
+  path: ..
+
+build:
+  noarch: python
+  entry_points:
+    - predictpyramidunet = pyramid3dunet.predict:main
+    - trainpyramidunet = pyramid3dunet.train:main
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python 3.9
+    - pytorch
+    - tensorboard
+    - tqdm
+    - setuptools
+    - h5py
+    - scipy
+    - scikit-image
+    - pyyaml
+
+test:
+  imports:
+    - pyramid3dunet
+    - pyramid3dunet.unet3d
+    - pyramid3dunet.augment
+    - pyramid3dunet.datasets
+  requires:
+    - pytest
+  run:
+    - py.test
+
+about:
+  home: https://github.com/wolny/pytorch-3dunet
+  license: MIT
